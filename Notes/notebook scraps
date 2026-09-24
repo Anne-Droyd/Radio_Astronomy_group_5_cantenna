@@ -1,0 +1,210 @@
+
+
+## Questions
+
+1. What is a hot load
+	   - "The simplest way to measure $T_r$ is to connect a matched “hot” load resistor whose physical temperature is $T_h$ to the radiometer input and record the detector output voltage $V_h$, and then replace it with a “cold” load whose physical temperature is $T_c$ and record the output voltage $V_c$. Often the hot load is just a resistor at room temperature $T_h$ ≈ 290 K and the cold load is a resistor immersed in liquid nitrogen at its boiling temperature $T_c$ ≈ 77 K." - ERA 3.6.6
+	   - A hot load is basically a calibration against a radio absorber at room temp to measure the background noise
+2. What are the requirements of our experiment
+	   - For some reason I think SNR 10 but I don't know why
+	   - Frequency resolution of at least 100 channels across the frequency range
+	   - 1.42GHz
+	   - $c = f \lambda$ 
+	   - $\lambda = 2.99792e8ms^{-1}/1.42e9s^{-1} = 0.21112m = 21.112cm$
+	   - Strong Neutral Hydrogen source (Galactic centre)
+3. what are the constraints on our experiment
+	   - Temp
+	   - antenna 
+	   - equipment
+	   - calibration
+	   - budget
+	   - Observation time window
+	   - Observation time period
+	   - Observation location
+	   - frequency bandwidth (quiet region)
+	   - Observation latitude
+	   - Data Analysis time constraints
+	   - Proposal acceptance time to experiment time 
+	   - Knowledge
+4. What is a sample integration time
+	   - This might be the time for analogue-digital collection, the binning time for a signal collection
+	   - longer integration times could improve SNR but decrease the time variability captured, i.e. longer exposure time on an image
+	   - For us, I don't think we are expecting a fluctuating source so longer integration times would be preferable but we are also limited by time for collection so long enough but not too long
+	   - $\sigma_T\approx\frac{T_s}{\sqrt{\Delta\upsilon\tau}}$
+	   - $\sigma_T$ receiver output fluctuation 
+	   - $T_s$ system noise
+	   - $\Delta\upsilon$ bandwidth
+	   - $\tau$ integration time
+5. How long do we need to observe for
+	   We need to calculate this, i.e. expected brightness of the source compared to expected noise to get minimum time for acceptable SNR 
+6. what spectral resolution do we need
+	   Higher spectral resolution will increase the SNR but too high will affect sample integration time and processing load so we need to balance this, minimum - ideal -max
+7. What SNR do we need?
+	   minimum SNR 3, this is measured in dB
+	   3-5 SNR standard
+	   SNR 10 high confidence
+8. What is the brightness temperature of galactic hydrogen?
+	   I don't know, need to know this for calculations, do I have to calculate this? 
+9. What is the expected system noise?
+	   Nyquist thermal noise, can be accounted for with the Johnson noise equation in [[Lecture 2]] but if we are looking of extending towards THz frequencies we need the more complex Johnson-Nyquist Noise equation as this accounts for the drop at higher frequencies at room temp
+10. what is the beam size of our antenna?
+	    also synonymously called beamwidth
+	    We are interested in the half power beamwidth (HPBW)
+	    $\theta = 0.89 \frac{\lambda}{D}$
+11. what is the effective area of our antenna
+	    $\left<A_e\right> = \frac{\lambda^2}{4\pi}$  
+	    This is assuming full sphere?
+		$A_0\Omega_A=\lambda^2$ 
+12. what is the gain of our antenna
+		Peak gain $G_0$ is dependent on the $\Omega_A$ beam solid angle, $G_0=\frac{4\pi}{\Omega_A}$
+		not sure about this one
+		assume beam solid angle is symmetrical so we can compare to beam width
+13. are the last three things the same?
+	    No, these are linked but different
+14. how do we estimate the system temperature?
+	    $\Sigma T = T_{ant} + T_{CMB}+T_{rsb}+\Delta T_{source}+...$  
+	    [DT_SRC](https://ui.adsabs.harvard.edu/abs/2018ApJ...855...33D/abstract)
+15. what are noise figures and component gain?
+	    $NF = 10log_{10}(F_n)$ expressed in dB and Gain of the system
+16. how do we calibrate?
+	    Hot and cold loads
+17. what is a high tech microwave absorber?
+	    I think this is a joke, I don't think it is a high tech solution its probably just a resister or something because Dutch microwave absorber solutions seems to be a joke company
+	    nope its some polystyrene solution like noise absorption pads
+18. what data reduction will be needed to produce a spectrum in brightness temp?
+	    brightness temp for source smaller than beam angle is 
+	    $T_A=\frac{A_0T_b\Omega_s}{\lambda^2}$ 
+	    $T_b$ brightness temp
+	    $T_A$ antenna temp
+	    $\Omega_s$ source angle
+	    $A_0$ effective collecting area
+		if the source is larger than the antenna beam then $T_A=T_b$
+19. what did they mean by general layout for my part?
+	    not sure
+20. How does the can work as an antenna?
+	    Cylinder is like waveguide
+	    dipole vs circular is analogous? is the circle treated as a loop where only the outside of the shape is holding the signal?
+21. What would be the best viewing angle for us to get highest SNR
+	    Negligible, better target = better SNR 
+22. What frequency are we using?
+	    1.42GHz
+23. What is the atmospheric interference for that frequency?
+	    Negligible?
+24. will viewing be affected by the viewing angle (zenith?)
+	    Negligible?
+25. if viewing is not affected by the viewing angle, what would be our best target at the time of our experiment? We could ask to run a night time observation if a specific target is interesting
+	    Galactic centre South 1600-2100 this time of year at this latitude
+26. What is the brightness temperature of HI in galactic plane?
+	    about 100-120K depending on the target in the plane
+
+## Links
+[Overleaf document](https://www.overleaf.com/project/6aad2029324139d307b2f4e8)
+[GitHub Repo](https://github.com/Anne-Droyd/Radio_Astronomy_group_5_cantenna)
+[Data drive link](https://drive.google.com/drive/folders/1pFewQrGKLhZaD4rvPdc7CgqayYiw_LGy?usp=sharing)
+
+[link to assignment submission](https://brightspace.universiteitleiden.nl/d2l/lms/dropbox/user/folder_submit_files.d2l?db=223680&grpid=502174&isprv=0&bp=0&ou=494908)
+  
+Linked to [[Lecture 3]]
+## Required elements
+
+- [x] The requirements and constraints for your experiment (sensitivity / observing frequency / frequency resolution / antenna type) #TODO
+- [x] A basic description/drawing of the hardware in your “telescope"
+- [x] A proposal for the intended sample-integration time, observation duration, and spectral resolution, including justification based on a calculation of the expected SNR (based on Galactic hydrogen brightness temperature, the expected system noise, and gain/effective area/beam size of your antenna). You can find information about the brightness temperature of the neutral hydrogen in the  Milky Way by going through the `ra-tutorial-r/LAB-survey.ipynb` notebook. [[Tutorial 3]]
+- [x] A relevant brightness-temperature vs  frequency plot created with the help of the `ra-tutorial-3/LAB-survey.ipynb` notebook. [[Tutorial 3]] #TODO
+- [x] An estimate of the system temperature based on component properties such as Noise Figures and gain.
+- [x] A plan for the calibration process during the measurement (use Y-factor calibration, a “hot load" will be available next session in the form of high-tech microwave absorbers on loan from Dutch Microwave Absorber Solutions).
+- [x] (A screen shot of) the GNU Radio flow-chart of your spectrometer/auto-correlator/radiometer
+- [x] A plot of actual data recorded with your system in the classroom. Preferably a spectrum or dynamic spectrum.
+- [x] The data reduction you _think_ needs to be done to produce a spectrum in units of Kelvin brightness temperature
+- [x] Any code you created/used to read and display test data (could be a Python program or Jupyter notebook).
+
+## Rubric
+
+| Criteria                 | Exceeds expectations<br><br>3 points                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   | Meets expectations<br><br>2 points                                                                                                                                                                                                                                                                                                                                                                                                                      | Below expectations<br><br>1 point                                                                                                                                                                                                                                                                                                             | Not acceptable<br><br>0 points                                                                                                                                                                             | Criterion Score                               |
+| ------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------- |
+| Completeness             | All required elements are present                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      | Between 3/4 and all are present                                                                                                                                                                                                                                                                                                                                                                                                                         | Between half and 3/4 are present                                                                                                                                                                                                                                                                                                              | Less than half of required elements are present                                                                                                                                                            | Score of Completeness,<br><br>/ 3             |
+| Introduction and aim     | Presents a concise lead-in to the report. Clearly states aim of report and experiment.                                                                                                                                                                                                                                                                                                                                                                                                                                 | Aim of report and experiment clearly  <br>stated. Might use too much or too little context, or might read like a  <br>summary instead.                                                                                                                                                                                                                                                                                                                  | Gives very little information. Aim of report and experiment unclear.                                                                                                                                                                                                                                                                          | Does not give any information about what to expect in the report.                                                                                                                                          | Score of Introduction and aim,<br><br>/ 3     |
+| Requirements             | Clear and concise, quantified list of requirements for the apparatus and experiment procedure. In addition to the most important ones, secondary requirements are described (e.g. about the operating environment or calibration).                                                                                                                                                                                                                                                                                     | The most important requirements (signal-to-noise ratio / spectral resolution / maximum integration time / antenna) are well described and quantified                                                                                                                                                                                                                                                                                                    | Some important requirements (signal-to-noise ratio / spectral resolution / maximum integration time / antenna) are either missing, or poorly worded.                                                                                                                                                                                          | Requirements vague, barely existent, not quantified                                                                                                                                                        | Score of Requirements,<br><br>/ 3             |
+| Apparatus and experiment | Describe apparatus and specifics of its parts (brand, type, properties: e.g. gain, beam width, noise figure, attenuation, ADC bits,...). Diagram of signal chain. Detailed prescription of measurement process. Detailed description of intended data reduction process. Observing- and reduction plans supported by actual recordings.                                                                                                                                                                                | Apparatus described in general terms. Physical properties of parts such as gain and noise figure. Conceptual diagram of signal chain. Important steps during the experiment. High level overview of intended data reduction. A plot of actual test data.                                                                                                                                                                                                | Apparatus described in general terms. Physical properties of components missing. Experimental procedure and data reduction plans contain several possible ambiguities. No test data.                                                                                                                                                          | At least one  of ``Apparatus description", ``Experiment procedure", or ``Data reduction plans" is missing.                                                                                                 | Score of Apparatus and experiment,<br><br>/ 3 |
+| Sensitivity calculations | Calculation of minimum exposure time based on detailed models of e.g. the antenna beam pattern and the expected Galactic geometry during the expected data acquisition                                                                                                                                                                                                                                                                                                                                                 | Estimate of minimum exposure time based on spectral resolution, expected system temperature, mean antenna properties (e.g. gain or beam solid angle), and representative estimate of brightness temperature of Galactic H_I.                                                                                                                                                                                                                            | Estimate of minimum exposure time is partially based on un-physical assumptions, but calculation follows a reasonable path                                                                                                                                                                                                                    | No serious attempt to justify the proposed integration time / observation duration                                                                                                                         | Score of Sensitivity calculations,<br><br>/ 3 |
+| Presentation             | Document has a logical number of sections in a logical order. Contains table of contents and potentially list of figures and an index, all figures are in-order and discussed in their vicinity.  Comprehensive references, in a neatly formatted bibliography section. Required sections<br><br>-   <br>    Introduction and aim <br>- Requirements<br>- Apparatus and experiment <br>- Sensitivity calculations<br><br>are all there and the content of those sections matches the intended subject of the sections. | Document has a logical number of sections  <br>in a logical order. May not have a table of contents, all figures are  <br>discussed in the order they appear. Only some relevant references, has a  <br>(rudimentary) bibliography section. Most of the standard  <br>system/experiment design sections (see "exceeds requirements" cell) are  <br>there and only rarely does part of their content not match the intended  <br>subject of the sections | Document has bare minimum of required sections, no table of contents, some figures  not discussed or out-of-order.  Only a few references, no bibliography. Content is often in the wrong place.                                                                                                                                              | No logical document structure, fonts too large or too small to read comfortably, many figures out of order or not discussed in the text. No references. Content not in its appropriate place.              | Score of Presentation,<br><br>/ 3             |
+| Figures                  | Tables and plots are complete, accurate,  <br>fully-labelled and easy to read. That is: proper titles, captions, and  <br>axis labels, easily legible (even when printed in greyscale), have  <br>useful use of colour, captions describe FIGURE, not physics of contents.  <br>Figures clearly support the main text.                                                                                                                                                                                                 | Tables and plots show most important information and results accurately, with at most a few having missing / illegible (axis) labels,  captions, or colour schemes.                                                                                                                                                                                                                                                                                     | Tables and plots show most important information and results (with minor inaccuracies), but many have missing / illegible (axis) labels, captions, or colour schemes.                                                                                                                                                                         | Tables and plots with important information and results missing, or otherwise  inaccurate.                                                                                                                 | Score of Figures,<br><br>/ 3                  |
+| Language                 | Near perfect English, no obvious grammar/spelling errors, clear and concise sentences. Strunk & White would be proud of you.                                                                                                                                                                                                                                                                                                                                                                                           | Easy to understand English, approximately one grammar / spelling error per page, generally clear, concise sentences, although there is the occasional long one.                                                                                                                                                                                                                                                                                         | Generally comprehensible English, typically more that 2 grammar/spelling errors per page, regular use of ``fluff'' words and overly complicated sentences.                                                                                                                                                                                    | Frequent grammar and/or spelling errors, sentences often difficult to parse, copious use of ``fluff" words and long sentences                                                                              | Score of Language,<br><br>/ 3                 |
+| Math                     | Consistent use of symbols, no typos, no errors in equations, all symbols are introduced in the text where they are first used, variable naming consistent with most literature, Table of Symbols describing every one including their units.                                                                                                                                                                                                                                                                           | Consistent use of symbols, at most a few small typos/equation errors, some variables not introduced where they first occur.                                                                                                                                                                                                                                                                                                                             | Inconsistent use of symbols, several instances where names/symbols deviate significantly from literature conventions, a few large typos/equation errors, many variables not introduced where they first occur.                                                                                                                                | Math is difficult to follow, many equations contain errors, inconsistent use of variables/symbols, many symbols not properly introduced.                                                                   | Score of Math,<br><br>/ 3                     |
+| Factual correctness      | The report contains no major misunderstandings/inaccuracies, and at most a few minor ones.                                                                                                                                                                                                                                                                                                                                                                                                                             | There are at most a few  major misunderstandings in the report, and at most a few smaller ones per page.                                                                                                                                                                                                                                                                                                                                                | (Nearly) every page contains a major inaccuracy and some smaller misunderstandings.                                                                                                                                                                                                                                                           | Report is riddled with major misunderstandings and inaccuracies.                                                                                                                                           | Score of Factual correctness,<br><br>/ 3      |
+| Software/code            | All code is properly documented and formatted. Clear variable names. Adheres generally to  \href{[https://www.python.org/dev/peps/pep-0008/](https://www.python.org/dev/peps/pep-0008/)}{PEP8 --Style Guide for Python Code}. No repeated code: logical functions.  Test code provided  <br>(e.g as "doctests").                                                                                                                                                                                                       | Data reduction example is a (short) python  <br>program or Jupyter Lab notebook with some iterations/loops and/or  <br>functions, sparse documentation, and descriptive variable/function  <br>names. Notebook code ordered in cells consisting of code that “belongs”  <br>together in some common way.                                                                                                                                                | Code (whether in a separate module or Jupyter notebook) contains no attempt at structure (e.g. no functions or class definitions), and no documentation; Not all cells/lines run without errors ; Undescriptive variable names ; No documentation / explanation of what the code tries to accomplish.                                         | No code or flow graphs provided at all.                                                                                                                                                                    | Score of Software/code,<br><br>/ 3            |
+| Argumentation            | All statements are justified by either references or clear reasoning/math/data in the report itself. No ``hand-waving''/speculation. Logical build-up to final conclusions                                                                                                                                                                                                                                                                                                                                             | Most statements are justified by either references or clear reasoning/math/data in the report itself. Occasional ``hand-waving'' / speculation, which is clearly labelled as such. Logical build-up to final conclusions. At most a few errors in reasoning.                                                                                                                                                                                            | There are several cases of unnecessary ``hand-waving'' / speculation. Mostly logical build-up to final conclusions, although several conclusions/steps are mentioned out of order / in surprising places. Several errors in reasoning (e.g. use of logical fallacies [https://www.logicalfallacies.org/](https://www.logicalfallacies.org/)). | Statements often not justified by either references or clear reasoning/math/data in the report itself, no logical build-up towards conclusions, many wrong or missing steps or (intermediate) conclusions. | Score of Argumentation,<br><br>/ 3            |
+|                          |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |                                                                                                                                                                                                                                                                                                                                                                                                                                                         |                                                                                                                                                                                                                                                                                                                                               |                                                                                                                                                                                                            |                                               |
+
+Total          Score of Experiment design report       / 36
+
+
+
+
+## Work assigned
+
+* Introduction + apparatus & experiment - Yara 
+* Requirements + apparatus & experiment - Dimitra 
+* ==General layout + work on sensitivity calculations - Me==
+* Final concluding paragraph + sensitivity calculations - Jon
+
+
+## Notes for me 
+
+I have to do some calculations and I'm not sure what general layout is, it might be the formatting/control of the doc 
+
+I have to also go back through the prep, 
+
+I'm a bit confused I need some time alone to think. 
+
+I will go back through the code to ensure pep-8 standard and DRY followed. 
+
+why 1024 channels used, its 10 bits, the resolution of the HackRF one is 8 bits, but this resolution refers to the analogue to DC conversion resolution. 
+
+Why 1024 was chosen over rather 256 or 2048 is due to a balance of frequency resolution + SNR gain to processing load, smaller amount of channels = less processor load but smaller resolution and less SNR, higher amount of channels = slower processing but greater SNR and resolution. 
+
+the NASA handbook might actually be useful, scan through it later.  #TODO
+
+ask TA for access to equipment tomorrow lol #TODO
+
+had to install wsl to run the notebooks, so I will just run everything through that in the meantime. It might be better if I sleep
+
+Calculation of spectral resolution for expected SNR
+
+First try to anwser questions in order to calculate 
+
+
+~~target north america nebula? 30degrees up at 4pm 25/9  East~~
+~~33 degrees up 4pm 2/10 East HII~~
+
+ionised or neutral hydrogen?
+
+Neutral hydrogen HI not HII so no nebulas?
+
+1600 2/10
+![[Pasted image 20260924010628.png]]
+
+1700 2/10 
+![[Pasted image 20260924010659.png]]
+
+possible issue with campus viewing center of galactic plane
+this is directly south down the main street, there are now more buildings on the left, we could go to the top of the car park on the right but the protections are metal so possible absorption by that...
+![[Pasted image 20260924010842.png]]
+
+21cm is internationally protected quiet listen only frequency
+
+centre is highest from 18:30 - 21:30 but doesn't really get any higher declination, just kinda moves E-W so best viewing time would be out of campus hours 
+
+![[WhatsApp Image 2026-09-24 at 18.29.35.jpeg]]
+
+What our scope will see
+
+the galactic co-ords to RA/DEC point here at 1400 today
+
+![[WhatsApp Image 2026-09-24 at 18.29.35 (1).jpeg]]
+
+That is greater than 10 degrees up, nearly 20, pointing NE, the temp of this region is about 120K
+
+this is the view behind the UNI
+
+![[WhatsApp Image 2026-09-24 at 18.29.35 (2).jpeg]]clear sight
